@@ -1,0 +1,79 @@
+body{
+    background-color: #ccc;
+}
+.main-container{
+    margin-left: 30%;
+    margin-top: 10%;
+    margin-right: 30%;
+    background-color: blueviolet;
+}
+
+header{
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-text {
+    animation: slideIn 0.8s ease;
+}
+
+.main-container button{
+    font-weight: bold;
+    font-size: xx-large;
+    align-items: center;
+    /* margin-top: 5%; */
+    margin-left: 15%;
+    margin-bottom: 5%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+button i{
+    color: white;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+.results{
+    display: flex;
+    gap: 6em;
+    justify-content: center;
+    color: white;
+    margin-left: 2em;
+    font-size: large;
+    
+}
+
+/* Apply styles to the result selection elements */
+.result-selection {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    font-size: 24px;
+    margin-right: 6em;
+    border-bottom: 3px solid #ccc;
+}
+
+/* Apply styles to the winner element */
+.result-selection.winner {
+    background-color: #42b72a; /* Change to the color you want for winners */
+    color: #ffffff; /* Change to the text color you want for winners */
+}
