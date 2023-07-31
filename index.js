@@ -26,12 +26,22 @@ const getUserScore = () =>{
     return parseInt(localStorage.getItem('userScore')) || 0;
 }
 
+const getComputerScore = () =>{
+    return parseInt(localStorage.getItem('computerScore')) || 0;
+}
+
 const setUserScore = (score) =>{
     localStorage.setItem('userScore', score.toString())
 }
 
+const setComputerScore = (score) =>{
+    localStorage.setItem('computerScore', score.toString())
+}
+
 let userScore = getUserScore()
+let computerScoreValue = getComputerScore()
 yourScore.innerText = userScore;
+computerScore.innerText = computerScoreValue;
 
 selection.addEventListener("click", e =>{
     if (e.target.matches('i')){
@@ -51,7 +61,11 @@ const makeSelection = (option) =>{
     addSelectionResult(option, yourWinner)
 
     if (yourWinner) incrementScore(yourScore)
-    if (computerWinner) incrementScore(computerScore)
+    if (computerWinner){
+        incrementScore(computerScore)
+        computerScoreValue = parseInt(computerScore.innerText)
+        setComputerScore(computerScoreValue)
+    }
 }
 
 const incrementScore = (score) =>{
